@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Angel",
+    "type": "alpha",
+    "planet": "Mars",
+    "parent_id": null
+  },
+  {
+    "id": 2,
+    "name": "Sara",
+    "type": "beta",
+    "planet": "Mars",
+    "parent_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Gonzalo",
+    "type": "alpha",
+    "planet": "Mars",
+    "parent_id": 1
+  },
+  {
+    "id": 4,
+    "name": "Maria",
+    "type": "beta",
+    "planet": "Mars",
+    "parent_id": 3
+  },
+  {
+    "id": 5,
+    "name": "David",
+    "type": "gamma",
+    "planet": "Mars",
+    "parent_id": 3
+  }
+]
