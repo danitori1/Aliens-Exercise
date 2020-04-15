@@ -9,7 +9,7 @@
   {
     "id": 2,
     "name": "Sara",
-    "type": "beta",
+    "type": "alpha",
     "planet": "Mars",
     "parent_id": 1
   },
@@ -33,5 +33,12 @@
     "type": "gamma",
     "planet": "Mars",
     "parent_id": 3
+  },
+  {
+    "id": 6,
+    "name": "Ana",
+    "type": "gamma",
+    "planet": "Mars",
+    "parent_id": 2
   }
 ]

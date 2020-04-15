@@ -1,0 +1,19 @@
+:root {
+  --fujitsu-color: rgba(163, 11, 26, 0.5);
+}
+
+.Box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid gray;
+  transition: 0.3s;
+}
+
+.Box:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Box.active {
+  background-color: var(--fujitsu-color);
+}

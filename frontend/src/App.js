@@ -13,7 +13,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='App'>
         <Header />
         <Body data={this.state.data[0]} />
       </div>
