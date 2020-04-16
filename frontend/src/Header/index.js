@@ -1,8 +1,8 @@
 import React from 'react';
 import 'materialize-css';
-import { Navbar, NavItem, Icon } from 'react-materialize';
+import { Navbar, NavItem, Icon, Dropdown, Divider } from 'react-materialize';
 
-export default function Header() {
+export default function Header(props) {
   return (
     <Navbar
       alignLinks='right'
@@ -27,6 +27,35 @@ export default function Header() {
     >
       <NavItem href=''>Getting started</NavItem>
       <NavItem href='components.html'>Components</NavItem>
+      <Dropdown
+        id='Dropdown_6'
+        options={{
+          alignment: 'left',
+          autoTrigger: true,
+          closeOnClick: true,
+          constrainWidth: true,
+          container: null,
+          coverTrigger: true,
+          hover: false,
+          inDuration: 150,
+          onCloseEnd: null,
+          onCloseStart: null,
+          onOpenEnd: null,
+          onOpenStart: null,
+          outDuration: 250,
+        }}
+        trigger={
+          <a href='#!'>
+            Dropdown <Icon right>arrow_drop_down</Icon>
+          </a>
+        }
+      >
+        <a href='#'>New Alien</a>
+        <Divider />
+        <a href='#' onClick={() => props.undoChanges()}>
+          Undo changes
+        </a>
+      </Dropdown>
     </Navbar>
   );
 }
