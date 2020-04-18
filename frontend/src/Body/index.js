@@ -14,7 +14,7 @@ export default class Body extends React.Component {
     var top_parents = [];
     if (this.props.data) {
       // Get top parents that has no parent => parent_id=null
-      top_parents = _.filter(this.props.data, { parent_id: null });
+      top_parents = _.filter(this.props.data, { parent_id: 0 });
       top_parents = top_parents.map((parent) => {
         return <Tree parent={parent} data={this.props.data} onClickEditData={(data) => this.props.onClickEditData(data)} />;
       });

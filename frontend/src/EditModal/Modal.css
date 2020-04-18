@@ -1,4 +1,23 @@
-#EditModal {
+#Modal {
   overflow-y: visible;
   max-height: 90%;
+}
+
+#delete_button {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  transition: 0.3s;
+}
+#delete_button i {
+  font-size: 30px;
+}
+
+#delete_button:hover button {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#delete_button:hover i {
+  color: rgb(194, 0, 0);
 }

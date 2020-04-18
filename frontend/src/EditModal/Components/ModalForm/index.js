@@ -75,11 +75,9 @@ export default class ModalForm extends React.Component {
                     outDuration: 250,
                   },
                 }}
-                value={this.props.data.parent_id}
+                value={this.props.data.parent_id ? this.props.data.parent_id : ''}
               >
-                <option disabled value=''>
-                  Choose your parent
-                </option>
+                <option disabled value=''></option>
                 <SelectOptions parents_data={this.props.parents_data} />
               </Select>
             </div>

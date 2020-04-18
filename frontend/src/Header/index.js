@@ -1,6 +1,6 @@
 import React from 'react';
 import 'materialize-css';
-import { Navbar, NavItem, Icon, Dropdown, Divider } from 'react-materialize';
+import { Navbar, NavItem, Icon } from 'react-materialize';
 
 export default function Header(props) {
   return (
@@ -25,37 +25,18 @@ export default function Header(props) {
         preventScrolling: true,
       }}
     >
-      <NavItem href=''>Getting started</NavItem>
-      <NavItem href='components.html'>Components</NavItem>
-      <Dropdown
-        id='Dropdown_6'
-        options={{
-          alignment: 'left',
-          autoTrigger: true,
-          closeOnClick: true,
-          constrainWidth: true,
-          container: null,
-          coverTrigger: true,
-          hover: false,
-          inDuration: 150,
-          onCloseEnd: null,
-          onCloseStart: null,
-          onOpenEnd: null,
-          onOpenStart: null,
-          outDuration: 250,
-        }}
-        trigger={
-          <a href='#!'>
-            Dropdown <Icon right>arrow_drop_down</Icon>
-          </a>
-        }
-      >
-        <a href='#'>New Alien</a>
-        <Divider />
-        <a href='#' onClick={() => props.undoChanges()}>
-          Undo changes
-        </a>
-      </Dropdown>
+      <NavItem onClick={() => props.undoChanges()}>
+        Undo Changes
+        <Icon left>undo</Icon>
+      </NavItem>
+      <NavItem onClick={() => props.onClickNewData()}>
+        New Alien
+        <Icon left>person_add</Icon>
+      </NavItem>
+      <NavItem onClick={() => props.handleSaveData()}>
+        Save
+        <Icon left>save</Icon>
+      </NavItem>
     </Navbar>
   );
 }
