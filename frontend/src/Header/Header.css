@@ -1,0 +1,15 @@
+.nav-wrapper {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.logo-image {
+  height: 50px;
+  width: 150px;
+  background-size: contain;
+  background-position: center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('../images/Fujitsu-logo.png');
+}

@@ -49,12 +49,12 @@ export default class ModalForm extends React.Component {
                 />
               </div>
             </div>
+
             <div className='row' id='SelectRow'>
               <Select
                 id='input_parent'
                 multiple={false}
                 onChange={(e) => this.props.handleInputChange(parseInt(e.target.value), 'parent_id')}
-                label='Parent'
                 s='12'
                 m='12'
                 l='12'
@@ -75,15 +75,20 @@ export default class ModalForm extends React.Component {
                     outDuration: 250,
                   },
                 }}
-                value={this.props.data.parent_id ? this.props.data.parent_id : ''}
+                label='Parent'
+                value={this.props.data.parent_id ? this.props.data.parent_id : 0}
               >
-                <option disabled value=''></option>
+                <option value={0}>No Parent</option>
                 <SelectOptions parents_data={this.props.parents_data} />
               </Select>
             </div>
+            <div className='row' id='LabelSelectRow'>
+              <label for='input_parent' id='parent_label'>
+                Type
+              </label>
+            </div>
             <div className='row' id='RadioRow'>
               <div className='RadioDiv'>
-                <label for='input_type'>Parent</label>
                 <RadioGroup
                   id='input_type'
                   label='Type'
@@ -93,15 +98,15 @@ export default class ModalForm extends React.Component {
                   l='12'
                   options={[
                     {
-                      label: 'ALPHA',
+                      label: 'Alpha',
                       value: 'alpha',
                     },
                     {
-                      label: 'BETA',
+                      label: 'Beta',
                       value: 'beta',
                     },
                     {
-                      label: 'GAMMA',
+                      label: 'Gamma',
                       value: 'gamma',
                     },
                   ]}

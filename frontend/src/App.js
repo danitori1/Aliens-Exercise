@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 
   async componentWillMount() {
-    const data = await fetchData('GET', null);
+    const data = await fetchData('GET', '/', null);
     this.setState({ data: [data] });
   }
 
@@ -76,6 +76,9 @@ export default class App extends React.Component {
   }
 
   applyNew(data) {
+    if (!data.parent_id) {
+      data.parent_id = 0;
+    }
     var old_state = _.clone(this.state.data);
     var new_data = _.clone(this.state.data[this.state.data.length - 1]);
     const last_id = _.orderBy(new_data, ['id'], ['desc'])[0]['id'];
@@ -112,11 +115,27 @@ export default class App extends React.Component {
   async handleSaveData() {
     M.Toast.dismissAll();
     M.toast({ html: 'Saving...' });
-    const requestBody = {
-      id: 1,
-      aliens: this.state.data[this.state.data.length - 1],
-    };
-    let addRequest = await fetchData('POST', requestBody, () => {
+
+    // Check which rows have to be deleted
+    const old_data = this.state.data[0];
+    const new_data = this.state.data[this.state.data.length - 1];
+    var delete_ids = [];
+    for (var alien of old_data) {
+      var exists = _.find(new_data, (old_alien) => {
+        return old_alien.id === alien.id;
+      });
+      if (!exists) {
+        delete_ids.push(alien.id);
+      }
+    }
+
+    // Delete ids
+    const deleteRequestBody = delete_ids;
+    await fetchData('DELETE', '/deleteAll', deleteRequestBody);
+
+    // Update collection
+    const updateRequestBody = this.state.data[this.state.data.length - 1];
+    await fetchData('POST', '/saveOrUpdateMultiple', updateRequestBody, () => {
       M.Toast.dismissAll();
       M.toast({ html: 'Saved succesfully' });
     });
@@ -124,7 +143,6 @@ export default class App extends React.Component {
 
   render() {
     var parents_data = _.filter(this.state.data[this.state.data.length - 1], { type: 'alpha' });
-
     return (
       <div className='App'>
         <Header undoChanges={() => this.undoChanges()} onClickNewData={() => this.handleNewData()} handleSaveData={() => this.handleSaveData()} />

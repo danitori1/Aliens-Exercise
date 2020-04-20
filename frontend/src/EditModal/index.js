@@ -23,16 +23,16 @@ export default class EditModal extends React.Component {
 
   render() {
     if (this.props.opened) {
-      const header_title = this.props.type === 'edit' ? 'EDIT ALIEN' : 'NEW ALIEN';
+      const header_title = this.props.type === 'edit' ? 'Edit Alien' : 'New Alien';
 
       // Button to create or edit an alien
       const apply_button =
         this.props.type === 'edit' ? (
-          <Button onClick={() => this.props.applyChanges(this.state.data)} flat modal='close' node='button' waves='green'>
+          <Button id='apply_button' onClick={() => this.props.applyChanges(this.state.data)} modal='close' node='button' waves='green'>
             APPLY
           </Button>
         ) : (
-          <Button onClick={() => this.props.applyNew(this.state.data)} flat modal='close' node='button' waves='green'>
+          <Button id='create_button' onClick={() => this.props.applyNew(this.state.data)} modal='close' node='button' waves='green'>
             CREATE
           </Button>
         );
@@ -40,7 +40,7 @@ export default class EditModal extends React.Component {
       const delete_button =
         this.props.type === 'edit' ? (
           <div id='delete_button'>
-            <Button onClick={() => this.props.applyDelete(this.state.data['id'])} flat modal='close' node='button' waves='green'>
+            <Button id='delete_button' onClick={() => this.props.applyDelete(this.state.data['id'])} flat modal='close' node='button' waves='green'>
               <Icon>delete</Icon>
             </Button>
           </div>
@@ -50,7 +50,7 @@ export default class EditModal extends React.Component {
         <Modal
           actions={[
             apply_button,
-            <Button flat modal='close' node='button' waves='green'>
+            <Button id='cancel_button' modal='close' node='button' waves='red'>
               CANCEL
             </Button>,
           ]}

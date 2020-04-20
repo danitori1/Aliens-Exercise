@@ -5,10 +5,58 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+}
+
+label.active {
+  font-size: medium;
+}
+
+.nav-wrapper {
+  margin-right: 20px;
+}
+
+nav ul a {
+  transition: 0.3s;
+}
+nav ul a:hover {
+  color: #a30b1a;
+}
+
+nav .brand-logo {
+  padding-left: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .App {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: repeat-y;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/space-background.jpg');
+}
+
+.modal .modal-footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 code {

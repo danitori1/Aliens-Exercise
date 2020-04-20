@@ -1,6 +1,6 @@
-{"id": 1, "name": "Angel", "type": "alpha", "planet": "Mars", "parent_id": null}
-{"id": 2, "name": "Sara", "type": "alpha", "planet": "Mars", "parent_id": 1}
-{"id": 3, "name": "Gonzalo", "type": "alpha", "planet": "Mars", "parent_id": 1}
-{"id": 4, "name": "Maria", "type": "beta", "planet": "Mars", "parent_id": 3}
-{"id": 5, "name": "David", "type": "gamma", "planet": "Mars", "parent_id": 3}
-{"id": 6, "name": "Ana", "type": "gamma", "planet": "Mars", "parent_id": 2}
+{"alien_id": 1, "name": "Angel", "type": "alpha", "planet": "Mars", "parent_id": null}
+{"alien_id": 2, "name": "Sara", "type": "alpha", "planet": "Mars", "parent_id": 1}
+{"alien_id": 3, "name": "Gonzalo", "type": "alpha", "planet": "Mars", "parent_id": 1}
+{"alien_id": 4, "name": "Maria", "type": "beta", "planet": "Mars", "parent_id": 3}
+{"alien_id": 5, "name": "David", "type": "gamma", "planet": "Mars", "parent_id": 3}
+{"alien_id": 6, "name": "Ana", "type": "gamma", "planet": "Mars", "parent_id": 2}

@@ -1,6 +1,24 @@
 #Modal {
   overflow-y: visible;
   max-height: 90%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#Modal h4 {
+  color: #a30b1a;
+  margin: 0;
+  padding: 1.52rem 0 0.912rem 0;
+  border-bottom: 1px solid grey;
+}
+
+#cancel_button {
+  background-color: grey;
+}
+#apply_button {
+  background-color: rgb(0, 133, 18);
+}
+#create_button {
+  background-color: rgb(0, 133, 18);
 }
 
 #delete_button {
@@ -8,6 +26,7 @@
   top: 10%;
   right: 5%;
   transition: 0.3s;
+  color: red;
 }
 #delete_button i {
   font-size: 30px;
@@ -15,9 +34,9 @@
 
 #delete_button:hover button {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: grey;
 }
 
-#delete_button:hover i {
-  color: rgb(194, 0, 0);
+.select-wrapper .caret {
+  fill: white;
 }

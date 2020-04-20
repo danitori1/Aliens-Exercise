@@ -1,9 +1,29 @@
+.ModalForm input {
+  color: white;
+}
+
 #RadioRow {
   display: flex;
   justify-content: center;
 }
 
+#radio_label {
+  margin-bottom: 10px;
+}
+
 .RadioDiv {
+  width: 60%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+}
+
+#LabelSelectRow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#parent_label {
+  width: 50%;
+  justify-content: start;
 }

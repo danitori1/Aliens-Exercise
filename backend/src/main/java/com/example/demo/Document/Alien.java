@@ -9,14 +9,15 @@ import java.io.Serializable;
 @Document(collection = "AlienData")
 public class Alien implements Serializable {
 
+
     @Id
     @NotNull
     private int id;
-
     private String name;
     private String type;
     private String planet;
     private int parent_id;
+
 
     public int getId() {
         return id;

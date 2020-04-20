@@ -1,5 +1,7 @@
 import React from 'react';
+import './Header.css';
 import 'materialize-css';
+
 import { Navbar, NavItem, Icon } from 'react-materialize';
 
 export default function Header(props) {
@@ -8,7 +10,7 @@ export default function Header(props) {
       alignLinks='right'
       brand={
         <a className='brand-logo' href='#'>
-          Logo
+          <div class='logo-image'></div>
         </a>
       }
       id='mobile-nav'
