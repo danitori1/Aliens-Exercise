@@ -9,7 +9,7 @@ To start this application click on init-exercise.bat to run the development serv
 Another way is to go on the backend folder and run these commands: 
   - mvn spring-boot:run
   
-And then on the backend frontend and run:
+And then on the frontend and run:
   - npm install
   - npm start
   
