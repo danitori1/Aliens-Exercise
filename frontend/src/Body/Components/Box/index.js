@@ -20,6 +20,13 @@ export default class Box extends React.Component {
       class_vertical_line = 'up-line';
     }
 
+    const child = _.find(this.props.all_data, { parent_id: this.props.data.id });
+
+    var classchild = '';
+    if (child) {
+      classchild = 'withchild';
+    }
+
     return (
       <div className='Box-container'>
         <div className={class_vertical_line}></div>
@@ -35,7 +42,7 @@ export default class Box extends React.Component {
             <div style={{ fontSize: '15px' }}>{this.props.data.type.capitalize()}</div>
           </div>
         </div>
-        <div className='down-line'></div>
+        <div className={`down-line ${classchild}`}></div>
       </div>
     );
   }

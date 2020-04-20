@@ -8,7 +8,7 @@ export default function Row(props) {
     class_last = props.class_last;
   }
   const Families = props.data.map((x) => {
-    return <Family data={x} onClickEditData={(data) => props.onClickEditData(data)} />;
+    return <Family data={x} onClickEditData={(data) => props.onClickEditData(data)} all_data={props.all_data} top={props.top} />;
   });
   return <div className={`Row ${class_last}`}>{Families}</div>;
 }

@@ -48,11 +48,16 @@ export default function Tree(props) {
   const Rows = family_tree.map((row, index) => {
     // Remark penultimate row for design
     var class_last;
+    var top = 'Top';
     if (index === family_tree.length - 2) {
       class_last = 'last-row';
     }
 
-    return <Row data={row} onClickEditData={(data) => props.onClickEditData(data)} class_last={class_last} />;
+    if (index > 0 && index < family_tree.length - 1) {
+      top = 'noTop';
+    }
+
+    return <Row all_data={props.data} data={row} onClickEditData={(data) => props.onClickEditData(data)} class_last={class_last} top={top} />;
   });
 
   return <div className='Tree'>{Rows}</div>;

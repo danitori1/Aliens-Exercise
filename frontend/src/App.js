@@ -81,7 +81,8 @@ export default class App extends React.Component {
     }
     var old_state = _.clone(this.state.data);
     var new_data = _.clone(this.state.data[this.state.data.length - 1]);
-    const last_id = _.orderBy(new_data, ['id'], ['desc'])[0]['id'];
+
+    const last_id = new_data[0] ? _.orderBy(new_data, ['id'], ['desc'])[0]['id'] : 0;
     const new_id = parseInt(last_id) + 1;
     data['id'] = new_id;
     new_data.push(data);
@@ -94,8 +95,18 @@ export default class App extends React.Component {
   applyDelete(id) {
     var old_state = _.clone(this.state.data);
     var old_data = _.clone(this.state.data[this.state.data.length - 1]);
+
+    // Delete all fields with selected id
     var new_data = _.reject(old_data, function (alien) {
       return parseInt(alien['id']) === id;
+    });
+
+    // Delete parent_id field from childs
+    new_data = new_data.map((x) => {
+      if (x.parent_id === id) {
+        x.parent_id = 0;
+      }
+      return x;
     });
     old_state.push(new_data);
     this.setState({ data: old_state });

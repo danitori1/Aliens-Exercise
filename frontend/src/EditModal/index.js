@@ -3,6 +3,7 @@ import './Modal.css';
 import { Modal, Button, Icon } from 'react-materialize';
 import _ from 'lodash';
 import ModalForm from './Components/ModalForm';
+import M from 'materialize-css';
 
 export default class EditModal extends React.Component {
   constructor(props) {
@@ -24,18 +25,31 @@ export default class EditModal extends React.Component {
   render() {
     if (this.props.opened) {
       const header_title = this.props.type === 'edit' ? 'Edit Alien' : 'New Alien';
-
-      // Button to create or edit an alien
-      const apply_button =
-        this.props.type === 'edit' ? (
-          <Button id='apply_button' onClick={() => this.props.applyChanges(this.state.data)} modal='close' node='button' waves='green'>
-            APPLY
-          </Button>
-        ) : (
-          <Button id='create_button' onClick={() => this.props.applyNew(this.state.data)} modal='close' node='button' waves='green'>
-            CREATE
-          </Button>
-        );
+      console.log(this.props.data);
+      if (this.state.data['name'] && this.state.data['planet'] && this.state.data['type']) {
+        // Button to create or edit an alien
+        var apply_button =
+          this.props.type === 'edit' ? (
+            <Button id='apply_button' onClick={() => this.props.applyChanges(this.state.data)} modal='close' node='button' waves='green'>
+              APPLY
+            </Button>
+          ) : (
+            <Button id='create_button' onClick={() => this.props.applyNew(this.state.data)} modal='close' node='button' waves='green'>
+              CREATE
+            </Button>
+          );
+      } else {
+        var apply_button =
+          this.props.type === 'edit' ? (
+            <Button id='apply_button' onClick={() => M.toast({ html: 'Please fill all the fields' })} node='button' waves='green'>
+              APPLY
+            </Button>
+          ) : (
+            <Button id='create_button' onClick={() => M.toast({ html: 'Please fill all the fields' })} node='button' waves='green'>
+              CREATE
+            </Button>
+          );
+      }
 
       const delete_button =
         this.props.type === 'edit' ? (

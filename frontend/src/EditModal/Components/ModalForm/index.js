@@ -7,11 +7,16 @@ import './ModalForm.css';
 
 function SelectOptions(props) {
   const options = props.parents_data.map((x) => {
-    return (
-      <option value={x.id}>
-        {x.id} - {x.name} - {x.planet}
-      </option>
-    );
+    // Check if option is not the alien itself
+    if (x.id !== props.id) {
+      return (
+        <option value={x.id}>
+          {x.id} - {x.name} - {x.planet}
+        </option>
+      );
+    } else {
+      return;
+    }
   });
   return options;
 }
@@ -79,7 +84,7 @@ export default class ModalForm extends React.Component {
                 value={this.props.data.parent_id ? this.props.data.parent_id : 0}
               >
                 <option value={0}>No Parent</option>
-                <SelectOptions parents_data={this.props.parents_data} />
+                <SelectOptions parents_data={this.props.parents_data} id={this.props.data.id} />
               </Select>
             </div>
             <div className='row' id='LabelSelectRow'>

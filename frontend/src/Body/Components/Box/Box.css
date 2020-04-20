@@ -51,14 +51,18 @@
 
 .up-line {
   height: 40px;
-  border-right: 1px solid black;
+  border-right: 5px solid #a30b1a;
   width: 1px;
 }
 
 .down-line {
-  height: 40px;
-  border-right: 1px solid black;
+  height: 0px;
+  border-right: 5px solid #a30b1a;
   width: 1px;
+}
+
+.down-line.withchild {
+  height: 40px;
 }
 
 .Row.last-row .Family .Box-container .down-line {
